@@ -5,8 +5,8 @@ import itertools
 inputPath = sys.argv[1]
 outputPath = sys.argv[2]
 
-offsetX = sys.argv[3] + 1
-offsetY = sys.argv[4] + 1
+offsetX = int(sys.argv[3]) + 1
+offsetY = int(sys.argv[4]) + 1
 
 print("input: {0} output: {1}\n offsetX: {2}, offsetY: {3}"
       .format(inputPath, outputPath, offsetX - 1, offsetY - 1))
